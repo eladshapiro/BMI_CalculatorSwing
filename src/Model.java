@@ -1,16 +1,15 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+
 
 
 public class Model extends JPanel
 {
-    private NorthPanel northPanel;
-    private SouthPanel southPanel;
-    private EastPanel eastPanel;
-    private WestPanel westPanel;
+    private final NorthPanel northPanel;
+    private final SouthPanel southPanel;
+    private final EastPanel eastPanel;
+    private final WestPanel westPanel;
 
     private double height;
     private double bodyFrameSlimness;
@@ -35,43 +34,18 @@ public class Model extends JPanel
 
 
 
-        southPanel.getSubmitButton().addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                Controller controller=new Controller(height,weight,age,bodyFrameSlimness);
-                JOptionPane.showMessageDialog(null,"Your BMI is : "+controller.getBMI()+"\nAnd you body status is: "+controller.getWeightStatus()+ "\n\nYour ideal weight is: "+ controller.getIdealWeight()+"\nAnd your Actual Weight is: "+weight);
+        southPanel.getSubmitButton().addActionListener(e -> {
+            Controller controller=new Controller(height,weight,age,bodyFrameSlimness);
+            JOptionPane.showMessageDialog(null,"Your BMI is : "+controller.getBMI()+"\nAnd you body status is: "+controller.getWeightStatus()+ "\n\nYour ideal weight is: "+ controller.getIdealWeight()+"\nAnd your Actual Weight is: "+weight);
 
-            }
         });
 
 
-        eastPanel.getHeightSlider().addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                height= eastPanel.getHeightSlider().getValue();
-            }
-        });
+        eastPanel.getHeightSlider().addChangeListener(e -> height= eastPanel.getHeightSlider().getValue());
 
-        eastPanel.getLargeRadioButton().addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                bodyFrameSlimness=1.1;
-            }
-        });
-        eastPanel.getMediumRadioButton().addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                bodyFrameSlimness=1;
-            }
-        });
-        eastPanel.getSmallRadioButton().addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                bodyFrameSlimness=0.9;
-            }
-        });
+        eastPanel.getLargeRadioButton().addItemListener(e -> bodyFrameSlimness=1.1);
+        eastPanel.getMediumRadioButton().addItemListener(e -> bodyFrameSlimness=1);
+        eastPanel.getSmallRadioButton().addItemListener(e -> bodyFrameSlimness=0.9);
 
 
         westPanel.getAgeTextField().addKeyListener(new KeyAdapter() {
@@ -90,22 +64,19 @@ public class Model extends JPanel
             }
         });
 
-        southPanel.getClearButton().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                westPanel.setFirstNameTextField();
-                westPanel.setLastNameTextField();
-                westPanel.setAgeTextField();
-                westPanel.setActualWeightField();
+        southPanel.getClearButton().addActionListener(e -> {
+            westPanel.setFirstNameTextField();
+            westPanel.setLastNameTextField();
+            westPanel.setAgeTextField();
+            westPanel.setActualWeightField();
 
-                eastPanel.clearBodyFrameGroup();
-                westPanel.clearGenderGroup();
+            eastPanel.clearBodyFrameGroup();
+            westPanel.clearGenderGroup();
 
-                eastPanel.clearHeightSlider();
+            eastPanel.clearHeightSlider();
 
 
 
-            }
         });
 
 

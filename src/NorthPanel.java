@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class NorthPanel extends JPanel
 {
-    private JLabel welcome;
+    private final JLabel welcome;
     NorthPanel()
     {
         this.welcome=new JLabel("welcome to the BMI calculator");

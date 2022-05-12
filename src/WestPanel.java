@@ -17,16 +17,8 @@ public class WestPanel extends JPanel
     private ButtonGroup genderGroup;
 
 
-    public JTextField getFirstNameTextField() {
-        return firstNameTextField;
-    }
-
     public void setFirstNameTextField() {
         this.firstNameTextField.setText("");
-    }
-
-    public JTextField getLastNameTextField() {
-        return lastNameTextField;
     }
 
     public void setLastNameTextField() {
@@ -49,15 +41,6 @@ public class WestPanel extends JPanel
         this.actualWeightField.setText("");
     }
 
-    public JRadioButton getMaleRadioButton() {
-        return maleRadioButton;
-    }
-
-
-
-    public JRadioButton getFemaleRadioButton() {
-        return femaleRadioButton;
-    }
 
     public void clearGenderGroup() {
         this.genderGroup.clearSelection();
