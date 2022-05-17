@@ -28,7 +28,7 @@ public double getIdealWeight()
     return (height-100+(age/10))*0.9*bodyFrameSlimness;      //calculates the ideal weight according to the equation
 }
 
-    public String getWeightStatus()          //returns the weight status according the BMI
+    public String getWeightStatus()          //returns the weight status according the BMI.
     {
         if (bmi<15)
         {
