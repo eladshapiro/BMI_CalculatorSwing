@@ -1,5 +1,7 @@
 import javax.swing.*;
-
+/*
+this class is responsible for the south panel, it has the submit and clear buttons
+ */
 public class SouthPanel extends JPanel
 {
     private JButton submitButton;

@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
-
+/*
+this class is responsible for the north panel
+ */
 public class NorthPanel extends JPanel
 {
     private final JLabel welcome;

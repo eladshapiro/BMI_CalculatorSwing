@@ -1,3 +1,6 @@
+/*
+this class is the controller, it is doing all the calculations
+ */
 public class Controller
 {
     private double height;
@@ -16,16 +19,16 @@ this.bodyFrameSlimness=bodyFrameSlimness;
 }
 public double getBMI()
 {
-    bmi=weight/(Math.pow((height*0.01),2));
+    bmi=weight/(Math.pow((height*0.01),2));       //calculates the BMI according to the equation
     return bmi;
 }
 
 public double getIdealWeight()
 {
-    return (height-100+(age/10))*0.9*bodyFrameSlimness;
+    return (height-100+(age/10))*0.9*bodyFrameSlimness;      //calculates the ideal weight according to the equation
 }
 
-    public String getWeightStatus()
+    public String getWeightStatus()          //returns the weight status according the BMI
     {
         if (bmi<15)
         {

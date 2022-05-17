@@ -1,5 +1,7 @@
 import javax.swing.*;
-
+/*
+this class is the view class, it's purpose is to show the program
+ */
 public class View
 {
     public static void main(String[] args)

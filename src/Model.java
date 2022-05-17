@@ -1,7 +1,10 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
+/*
+this class is the model class, it's purpose is to init all the panels and buttons and labels
+and the actions they do
+ */
 
 
 public class Model extends JPanel
@@ -34,14 +37,14 @@ public class Model extends JPanel
 
 
 
-        southPanel.getSubmitButton().addActionListener(e -> {
+        southPanel.getSubmitButton().addActionListener(e -> {             //the listener to the submit button
             Controller controller=new Controller(height,weight,age,bodyFrameSlimness);
             JOptionPane.showMessageDialog(null,"Your BMI is : "+controller.getBMI()+"\nAnd you body status is: "+controller.getWeightStatus()+ "\n\nYour ideal weight is: "+ controller.getIdealWeight()+"\nAnd your Actual Weight is: "+weight);
 
         });
 
 
-        eastPanel.getHeightSlider().addChangeListener(e -> height= eastPanel.getHeightSlider().getValue());
+        eastPanel.getHeightSlider().addChangeListener(e -> height= eastPanel.getHeightSlider().getValue());    //the listener to the height slider
 
         eastPanel.getLargeRadioButton().addItemListener(e -> bodyFrameSlimness=1.1);
         eastPanel.getMediumRadioButton().addItemListener(e -> bodyFrameSlimness=1);
@@ -50,7 +53,7 @@ public class Model extends JPanel
 
         westPanel.getAgeTextField().addKeyListener(new KeyAdapter() {
             @Override
-            public void keyReleased(KeyEvent e) {
+            public void keyReleased(KeyEvent e) {       //the listener to the age input
                 ageText= westPanel.getAgeTextField().getText();
                 age =Integer.parseInt(ageText);
             }
@@ -58,13 +61,13 @@ public class Model extends JPanel
 
         westPanel.getActualWeightField().addKeyListener(new KeyAdapter() {
             @Override
-            public void keyReleased(KeyEvent e) {
+            public void keyReleased(KeyEvent e) {       //the listener to the weight input
                 weightText=westPanel.getActualWeightField().getText();
                 weight=Integer.parseInt(weightText);
             }
         });
 
-        southPanel.getClearButton().addActionListener(e -> {
+        southPanel.getClearButton().addActionListener(e -> {              //the listener to the clear button
             westPanel.setFirstNameTextField();
             westPanel.setLastNameTextField();
             westPanel.setAgeTextField();

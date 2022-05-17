@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-
+/*
+this class is responsible for the west panel, it has the name input, the age input,the gender radio buttons,
+ and the age and weight input
+ */
 public class WestPanel extends JPanel
 {
     private JLabel lastName;

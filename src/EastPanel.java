@@ -1,5 +1,7 @@
 import javax.swing.*;
-
+/*
+this class is responsible for the east panel, it has the height slider, and the body-frame radio buttons
+ */
 public class EastPanel extends JPanel
 {
     private JSlider heightSlider;
